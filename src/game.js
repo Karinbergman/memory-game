@@ -21,6 +21,14 @@ class Game extends React.Component {
   setupGame = () => {
     const duplicatedPhotos = photos.concat(photos);
 
+    let i = duplicatedPhotos.length - 1;
+      for (; i > 0; i--) {
+        const random = Math.floor(Math.random() * (i + 1));
+        const temp = duplicatedPhotos[i];
+        duplicatedPhotos[i] = duplicatedPhotos[random];
+        duplicatedPhotos[random] = temp;
+      }
+
     return duplicatedPhotos.map((photo) => {
       return {
         src: photo,
