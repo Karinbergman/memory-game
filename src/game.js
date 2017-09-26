@@ -2,23 +2,31 @@ import React from "react"
 import Card from "./card"
 import Counter from "./counter"
 
+const photos = [
+  '/images/surfboard1.jpg',
+  '/images/surfboard2.jpg',
+  '/images/surfboard3.jpg',
+  '/images/surfboard4.jpg'
+];
+
 class Game extends React.Component {
 
-  state = {
-    cards: [
-      {
-        src: '/images/surfboard1.jpg'
-      },
-      {
-        src: '/images/surfboard2.jpg'
-      },
-      {
-        src: '/images/surfboard3.jpg'
-      },
-      {
-        src: '/images/surfboard4.jpg'
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: this.setupGame()
+    }
+  }
+
+  setupGame = () => {
+    const duplicatedPhotos = photos.concat(photos);
+
+    return duplicatedPhotos.map((photo) => {
+      return {
+        src: photo,
+        isFlipped: false
       }
-    ]
+    })
   }
 
   renderCard = (card) => {
