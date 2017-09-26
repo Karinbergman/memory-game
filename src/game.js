@@ -4,10 +4,11 @@ import Card from "./card"
 const Game = () => (
   <div className="game">
     <h1>Memory game</h1>
-    <Card src="/images/dog1.jpeg" />
-    <Card src="/images/dog2.jpeg" />
-    <Card src="/images/dog3.jpeg" />
+    <Card src="/images/surfboard1.jpg" />
+    <Card src="/images/surfboard2.jpg" />
+    <Card src="/images/surfboard3.jpg" />
+    <Card src="/images/surfboard4.jpg" />
   </div>
-)  
+)
 
 export default Game
