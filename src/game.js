@@ -21,15 +21,16 @@ class Game extends React.Component {
     ]
   }
 
+  renderCard = (card) => {
+    return <Card src={card.src} />
+  }
+
   render() {
     return (
       <div className="game">
         <h1>Let{`'`}s <span>play</span> Memory <span>Beach</span> game<span>!</span></h1>
         <div className="card-wrapper">
-          <Card src={this.state.cards[0].src} />
-          <Card src={this.state.cards[1].src} />
-          <Card src={this.state.cards[2].src} />
-          <Card src={this.state.cards[3].src} />
+          {this.state.cards.map(this.renderCard)}
         </div>
       </div>
     )
