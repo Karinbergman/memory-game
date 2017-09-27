@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./card";
 //import Counter from "./counter"
 import shuffle from 'shuffle-array';
+import uuidv4 from 'uuid/v4';
 
 const photos = [
   '/images/surfboard1.jpg',
@@ -23,9 +24,9 @@ class Game extends React.Component {
     const duplicatedPhotos = photos.concat(photos);
     const shuffledPhotos = shuffle(duplicatedPhotos);
 
-    return shuffledPhotos.map((photo, index) => {
+    return shuffledPhotos.map((photo) => {
       return {
-        id: index,
+        id: uuidv4(),
         src: photo,
         isFlipped: false,
         isMatched: false
@@ -34,15 +35,21 @@ class Game extends React.Component {
   }
 
 // New function which will take one argument, a "card src" and logged it
-  handledCardClicked = (cardSrc) => {
-    console.log(cardSrc);
+  handledCardClicked = (cardId) => {
+    console.log(cardId);
   }
 
 // Create a new instance of the Card component with the following props:
 //  src: url of the photo
 //  onCardClick: a callback function which card can invoke when it's clicked
+//  key: a unique identifier for react to use when rendering from an array
+//  id: a unique identifier we can use to refer to this card later
   renderCard = (card) => {
-    return <Card src={card.src} key={card.id} onCardClick={this.handledCardClicked} />
+    return <Card
+      src={card.src}
+      key={card.id}
+      id={card.id}
+      onCardClick={this.handledCardClicked} />
   }
 
   render() {
