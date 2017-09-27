@@ -1,6 +1,7 @@
-import React from "react"
-import Card from "./card"
-import Counter from "./counter"
+import React from "react";
+import Card from "./card";
+//import Counter from "./counter"
+import shuffle from 'shuffle-array';
 
 const photos = [
   '/images/surfboard1.jpg',
@@ -20,20 +21,19 @@ class Game extends React.Component {
 
   setupGame = () => {
     const duplicatedPhotos = photos.concat(photos);
+    const shuffledPhotos = shuffle(duplicatedPhotos);
 
-    let i = duplicatedPhotos.length - 1;
-      for (; i > 0; i--) {
-        const random = Math.floor(Math.random() * (i + 1));
-        const temp = duplicatedPhotos[i];
-        duplicatedPhotos[i] = duplicatedPhotos[random];
-        duplicatedPhotos[random] = temp;
-      }
-
-    return duplicatedPhotos.map((photo) => {
+    return shuffledPhotos.map((photo) => {
       return {
         src: photo,
         isFlipped: false
       }
+    })
+  }
+
+  onClick = () => {
+    this.setState({
+      isFlipped: true
     })
   }
 
