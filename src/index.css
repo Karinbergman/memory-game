@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Shadows+Into+Light+Two');
 
 body {
   margin: 0;
@@ -11,12 +11,27 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */
 }
 
-h1 {
+h1, h2 {
   color: #FFF;
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 2.5em;
+}
+
+h1 span {
+  color: #FF9800;
+}
+
+h2 {
+  font-size: 1em;
+  margin: 0;
+  text-transform: none;
+  font-family: 'Open Sans', sans-serif;
   padding-bottom: 20px;
-  border-bottom: 2px solid white;
 }
 
 .game {
