@@ -40,7 +40,8 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        <h1>Let{`'`}s play Memory Surfboard game!</h1>
+        <h1>Let{`'`}s <span>play</span> Memory!</h1>
+        <h2>Try to find the two surfboards that matches.</h2>
         <div className="card-wrapper">
           {this.state.cards.map(this.renderCard)}
         </div>
