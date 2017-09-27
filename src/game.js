@@ -33,15 +33,23 @@ class Game extends React.Component {
     })
   }
 
+// New function which will take one argument, a "card src" and logged it
+  handledCardClicked = (cardSrc) => {
+    console.log(cardSrc);
+  }
+
+// Create a new instance of the Card component with the following props:
+//  src: url of the photo
+//  onCardClick: a callback function which card can invoke when it's clicked
   renderCard = (card) => {
-    return <Card src={card.src} key={card.id} />
+    return <Card src={card.src} key={card.id} onCardClick={this.handledCardClicked} />
   }
 
   render() {
     return (
       <div className="game">
         <h1>Let{`'`}s <span>play</span> Memory!</h1>
-        <h2>Try to find the two surfboards that matches.</h2>
+        <h2>Try to find surfboards that matches</h2>
         <div className="card-wrapper">
           {this.state.cards.map(this.renderCard)}
         </div>
