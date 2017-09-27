@@ -23,28 +23,24 @@ class Game extends React.Component {
     const duplicatedPhotos = photos.concat(photos);
     const shuffledPhotos = shuffle(duplicatedPhotos);
 
-    return shuffledPhotos.map((photo) => {
+    return shuffledPhotos.map((photo, index) => {
       return {
+        id: index,
         src: photo,
-        isFlipped: false
+        isFlipped: false,
+        isMatched: false
       }
     })
   }
 
-  onClick = () => {
-    this.setState({
-      isFlipped: true
-    })
-  }
-
   renderCard = (card) => {
-    return <Card src={card.src} />
+    return <Card src={card.src} key={card.id} />
   }
 
   render() {
     return (
       <div className="game">
-        <h1>Let{`'`}s <span>play</span> Memory <span>Beach</span> game<span>!</span></h1>
+        <h1>Let{`'`}s play Memory Surfboard game!</h1>
         <div className="card-wrapper">
           {this.state.cards.map(this.renderCard)}
         </div>
