@@ -1,23 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two');
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-image: url('/images/table_bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #b4e391; /* Old browsers */
+  background: -moz-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */
 }
 
 h1 {
   color: #FFF;
   text-align: center;
-}
-
-h1 span {
-  color: #ffe500;
-  text-shadow: 2px 2px 1px rgba(255, 255, 255, 1);
+  font-family: 'Shadows Into Light Two', cursive;
+  padding-bottom: 20px;
+  border-bottom: 2px solid white;
 }
 
 .game {
   margin: 0 auto;
-  height: 100vh;
 }
