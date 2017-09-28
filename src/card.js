@@ -15,6 +15,16 @@ class Card extends React.Component {
     this.props.onCardClick(this.props.id);
   }
 
+// Function to return a different class name when the props 'isFlipped'
+// is true or false
+  setClassName = () => {
+    if (this.props.isFlipped) {
+      return "card flipped"
+    } else {
+      return "card not-flipped"
+    }
+  }
+
 // render() is a required function for our component
 // React will invoke this function when it mounts the component
   render() {
@@ -25,7 +35,7 @@ class Card extends React.Component {
     // Props become and object so, className="foo", becomes { className : "foo"}
     // on this.props, and onClick becomes { onClic: () => {} }
     return (
-      <div className="card" onClick={this.handleClick}>
+      <div className={this.setClassName()} onClick={this.handleClick}>
         <img src={this.props.src} alt="" />
       </div>
     )
