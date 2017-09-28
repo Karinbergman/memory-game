@@ -34,17 +34,17 @@ class Game extends React.Component {
     })
   }
 
-// New function which will take one argument, a "card src" and logged it
+// New function which will take one argument, a "card id" and logged it
   handledCardClicked = (cardId) => {
     console.log(cardId);
-    const newStateArray = this.state.cards.map((card) => {
+    const newCardsState = this.state.cards.map((card) => {
       if (card.id === cardId) {
         card.isFlipped = !card.isFlipped;
       }
       return card;
     })
     this.setState ({
-      cards: newStateArray
+      cards: newCardsState
     })
   }
 
@@ -53,7 +53,7 @@ class Game extends React.Component {
 //  onCardClick: a callback function which card can invoke when it's clicked
 //  key: a unique identifier for react to use when rendering from an array
 //  id: a unique identifier we can use to refer to this card later
-// isFlipped: a boolean which will be toggled when the card is flipped
+//  isFlipped: a boolean which will be toggled when the card is flipped
   renderCard = (card) => {
     return <Card
       src={card.src}
