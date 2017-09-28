@@ -16,9 +16,11 @@ class Card extends React.Component {
   }
 
 // Function to return a different class name when the props 'isFlipped'
-// is true or false
+// is true or false. It needs to return the correct class!
   setClassName = () => {
-    if (this.props.isFlipped) {
+    if (this.props.isMatched) {
+      return "card matched"
+    } else if (this.props.isFlipped) {
       return "card flipped"
     } else {
       return "card not-flipped"
