@@ -14,8 +14,19 @@
 
 .card img {
   width: 200px;
+  display: block;
 }
 
 .card:hover {
   cursor: pointer;
+}
+
+.card.not-flipped {
+  background-image: url('/images/palmtree.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card.not-flipped img {
+  visibility: hidden;
 }
