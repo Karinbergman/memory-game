@@ -92,6 +92,7 @@ notMatchedCards = () => {
 //  key: a unique identifier for react to use when rendering from an array
 //  id: a unique identifier we can use to refer to this card later
 //  isFlipped: a boolean which will be toggled when the card is flipped
+//  isMatched: a boolean which will be toggled when the card is matched
   renderCard = (card) => {
     return <Card
       src={card.src}
