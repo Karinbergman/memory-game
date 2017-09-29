@@ -17,7 +17,8 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: this.setupGame()
+      cards: this.setupGame(),
+      count: 0
     }
   }
 
@@ -49,8 +50,10 @@ class Game extends React.Component {
       }
       return card;
     })
+
     this.setState ({
-      cards: newCardsState
+      cards: newCardsState,
+      count: this.state.count + 1
     }, this.checkIfCardsMatched())
   }
 
@@ -109,6 +112,7 @@ notMatchedCards = () => {
         <div className="success-message">
           <SuccessMessage
             onResetClick={this.handleResetButtonClicked}
+            count={this.state.count}
           />
           <div className="confetti confetti1"></div>
           <div className="confetti confetti2"></div>
