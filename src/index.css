@@ -9,6 +9,7 @@ body {
   background: -webkit-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-9 */
+  height: 100vh;
 }
 
 h1, h2 {
@@ -36,4 +37,44 @@ h2 {
 
 .game {
   margin: 0 auto;
+}
+
+.success-wrapper h1 {
+  font-size: 8em;
+}
+
+.success-wrapper p {
+  text-align: center;
+  color: #FFF;
+  font-size: 2em;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.reset-button {
+  text-align: center;
+}
+
+button {
+  border: none;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+  font-size: 1.2em;
+  background-color: #FF9800;
+  color: #FFF;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
+  letter-spacing: 5px;
+}
+
+button:hover {
+  background-color: #d78308;
 }

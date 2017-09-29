@@ -10,8 +10,12 @@
   margin: 10px;
   border: 10px solid #FFF;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
-  transform-style: preserve-3d;
-  transition: transform 1s;
+  //transform-style: preserve-3d;
+  //transition: transform 1s;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .card img {
@@ -24,7 +28,7 @@
 }
 
 .card.flipped {
-  transform: rotateY(180deg);
+  //transform: rotateY(180deg);
 }
 
 .card.not-flipped {
