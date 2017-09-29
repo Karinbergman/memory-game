@@ -110,6 +110,27 @@ notMatchedCards = () => {
           <SuccessMessage
             onResetClick={this.handleResetButtonClicked}
           />
+          <div className="confetti confetti1"></div>
+          <div className="confetti confetti2"></div>
+          <div className="confetti confetti3"></div>
+          <div className="confetti confetti4"></div>
+          <div className="confetti confetti5"></div>
+          <div className="confetti confetti6"></div>
+          <div className="confetti confetti7"></div>
+          <div className="confetti confetti8"></div>
+          <div className="confetti confetti9"></div>
+          <div className="confetti confetti10"></div>
+          <div className="confetti confetti11"></div>
+          <div className="confetti confetti12"></div>
+          <div className="confetti confetti13"></div>
+          <div className="confetti confetti14"></div>
+          <div className="confetti confetti15"></div>
+          <div className="confetti confetti16"></div>
+          <div className="confetti confetti17"></div>
+          <div className="confetti confetti18"></div>
+          <div className="confetti confetti19"></div>
+          <div className="confetti confetti20"></div>
+          <div className="confetti confetti21"></div>
         </div>
       )
     } else {
