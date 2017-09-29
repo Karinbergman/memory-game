@@ -1,5 +1,5 @@
-import React from "react" // We need React to use React
-import "./card.css" // Just normal css, react injects it into the <head> component
+import React from "react"; // We need React to use React
+import "./card.css"; // Just normal css, react injects it into the <head> component
 
 // Define a "Card" component.
 // That component is inheriting functions from React.Component

@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./card";
+import SuccessMessage from "./successMessage"
 //import Counter from "./counter"
 import shuffle from 'shuffle-array';
 import uuidv4 from 'uuid/v4';
@@ -34,6 +35,12 @@ class Game extends React.Component {
     })
   }
 
+  handleResetButtonClicked = () => {
+    this.setState ({
+      cards: this.setupGame()
+    })
+  }
+
 // New function which will take one argument, a "card id" and logged it
   handledCardClicked = (cardId) => {
     const newCardsState = this.state.cards.map((card) => {
@@ -57,7 +64,7 @@ checkIfCardsMatched = () => {
       flippedCards[0].isMatched = true;
       flippedCards[1].isMatched = true;
     }
-    setTimeout(this.closeAllCards, 1000);
+    setTimeout(this.closeAllCards, 600);
   }
 }
 
@@ -69,19 +76,14 @@ closeAllCards = () => {
   this.setState ({
     cards: newCardsArray
   })
-  if (this.cardsThatAreNotMatched()) {
-    alert('HEJ');
-  }
+  this.notMatchedCards();
 }
 
-cardsThatAreNotMatched = () => {
-  const matchedNotCards = this.state.cards.filter((image) => {
+notMatchedCards = () => {
+  const notMatchedCards = this.state.cards.filter((image) => {
     return !image.isMatched;
   })
-  if (matchedNotCards.length === 0) {
-    alert('YOU WON');
-  }
-  console.log(matchedNotCards);
+  return notMatchedCards.length <= 0;
 }
 
 // Create a new instance of the Card component with the following props:
@@ -101,29 +103,25 @@ cardsThatAreNotMatched = () => {
   }
 
   render() {
-    return (
-      <div className="game">
-      {
-        (matchedNotCards.length === 0)
-          ? <h1>Let{`'`}s <span>play</span> Memory!</h1>
-            <h2>Try to find surfboards that matches</h2>
-            <div className="card-wrapper">
-              {this.state.cards.map(this.renderCard)}
-            </div>
-          : <div>
-            <h1>YOU WON!</h1> 
-              <button onClick={this.resetGame}>
-                Play again?
-              </button>
-            </div>
-      }
+    if (this.notMatchedCards()) {
+      return (
+        <div className="success-message">
+          <SuccessMessage
+            onResetClick={this.handleResetButtonClicked}
+          />
+        </div>
+      )
+    } else {
+      return (
+          <div className="game">
             <h1>Let{`'`}s <span>play</span> Memory!</h1>
             <h2>Try to find surfboards that matches</h2>
             <div className="card-wrapper">
               {this.state.cards.map(this.renderCard)}
             </div>
-      </div>
-    )
+          </div>
+      )
+    }
   }
 }
 
